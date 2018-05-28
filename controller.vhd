@@ -11,20 +11,20 @@ entity controller is --This controller is used to control the datapath.
 		clk		      : in std_logic;
 		rst 	      : in std_logic;
 		
-		op_code		  : in std_logic_vector(5 downto 0);
+		op_code		  : in std_logic_vector(5 downto 0); -- opcode
 		
-		alu_op        : out std_logic_vector(7 downto 0);
+		alu_op        : out std_logic_vector(7 downto 0); -- Alu OP
 		alu_reg_en    : out std_logic;
 		
-		alu_a_mux_sel : out std_logic_vector(1 downto 0);
-		alu_b_mux_sel : out std_logic_vector(1 downto 0); 
+		alu_a_mux_sel : out std_logic_vector(1 downto 0); --ALUSrcA
+		alu_b_mux_sel : out std_logic_vector(1 downto 0); --ALUSrcB this must be (3 downto 0) because B mux is 4 to 1 
 		
 		inst_reg_en   : out std_logic;
 		
-		pc_mux_sel    : out std_logic_vector(1 downto 0);
+		pc_mux_sel    : out std_logic_vector(1 downto 0); --IOrD
 		
-		mem_reg_en    : out std_logic;
-		mem_mux_sel   : out std_logic;
+		mem_reg_en    : out std_logic; --Memtoreg
+		mem_mux_sel   : out std_logic; --
 		
 		data_mux_sel  : out std_logic;
 		dest_mux_sel  : out std_logic;
